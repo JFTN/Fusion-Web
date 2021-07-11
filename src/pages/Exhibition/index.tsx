@@ -1,20 +1,40 @@
 import React, { ReactElement, HTMLAttributes } from "react";
-import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
-// import ExhibitionModel from "models/Exhibition";
+import ExhibitionLayout from "layouts/Exhibition";
+import { ExhibitionModel } from "models/Exhibition";
 
-// type ExhibitionProps = ExhibitionModel & HTMLAttributes<HTMLElement>;
-
-const Exhibition = (): ReactElement => (
-  <div className="exhibition">
-    <h1>Exhibitions</h1>
-    <Link to="/">Home</Link>
-    <br />
-    <Link to="/profile">Profile</Link>
-    <br />
-    <Link to="/exhibition/host">Host</Link>
-    <br />
-  </div>
-);
+const Exhibition = (): ReactElement => {
+  const {
+    UUID,
+    host,
+    coHost,
+    title,
+    description,
+    keywords,
+    sections,
+    roles,
+    openingDate,
+    closingDate,
+    visibility,
+    invitedAttendees,
+  } = useParams<ExhibitionModel>();
+  return (
+    <ExhibitionLayout
+      UUID={UUID}
+      host={host}
+      coHost={coHost}
+      title={title}
+      description={description}
+      keywords={keywords}
+      sections={sections}
+      roles={roles}
+      openingDate={openingDate}
+      closingDate={closingDate}
+      visibility={visibility}
+      invitedAttendees={invitedAttendees}
+    />
+  );
+};
 
 export default Exhibition;

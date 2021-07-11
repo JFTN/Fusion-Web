@@ -24,4 +24,4 @@ interface ExhibitionModel {
 
 export default ExhibitionModel;
 
-export { VisibilityTypes };
+export { VisibilityTypes, ExhibitionModel }; // some how "export default ExhibitionModel" above can't be detected from the layout so I added it here
