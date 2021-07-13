@@ -14,14 +14,10 @@ const Tag = ({
   currentFilter,
   ...rest
 }: TagProps): ReactElement => {
-  return flag & currentFilter ? (
-    <li {...rest}>
-      <Link to={`/${username}?tags=${flag ^ currentFilter}`}>[{name}]</Link>
-    </li>
-  ) : (
-    <li {...rest}>
-      <Link to={`/${username}?tags=${flag ^ currentFilter}`}>{name}</Link>
-    </li>
+  return (
+    <Link to={`/${username}?tags=${flag ^ currentFilter}`} {...rest}>
+      {flag & currentFilter ? `[${name}]` : name}
+    </Link>
   );
 };
 

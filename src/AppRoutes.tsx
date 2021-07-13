@@ -5,6 +5,7 @@ import Exhibition from "pages/Exhibition";
 import HostExhibition from "pages/Exhibition/Host";
 import ForgotPassword from "pages/ForgotPassword";
 import Home from "pages/Home";
+import NewProject from "pages/NewProject";
 import Project from "pages/Project";
 import SignIn from "pages/SignIn";
 import SignUp from "pages/SignUp";
@@ -21,6 +22,8 @@ const AppRoutes = (): ReactElement => (
 
       <Route exact path="/exhibition" component={Exhibition} />
       <Route path="/exhibition/host" component={HostExhibition} />
+
+      <Route exact path="/new" component={NewProject} />
 
       <Route exact path="/:username" component={User} />
       <Route exact path="/:authorUsername/:projectTitle" component={Project} />

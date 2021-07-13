@@ -25,6 +25,7 @@ const UserLayout = ({
     <ProfileView {...profile} />
     <UserTagList tagFlags={tagFlags} username={username} profile={profile} />
     <UserProjectList projects={projects} tagFilter={tagFlags} />
+    <Link to="/new">New Project</Link>
   </>
 );
 
